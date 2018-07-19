@@ -1,4 +1,14 @@
 Library::Application.routes.draw do
+  get "books/index"
+
+  get "books/new"
+
+  get "welcome/index"
+
+  root to:'welcome#index'
+
+  resources :authors
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

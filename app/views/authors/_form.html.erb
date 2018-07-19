@@ -1,0 +1,9 @@
+<%=form_for @author do |form|%>
+	<p>
+		<strong><%= form.label :name%></strong>
+		<%= form.text_field :name%><br>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<%end%>
