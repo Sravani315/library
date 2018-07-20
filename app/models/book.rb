@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
 	# validates :title, presence: true, if: :title_is?
+
 	validates :title, length: {minimum: 2}
 	validates :description, length: { within: 2...20 }
 	# validates :title, length: {minimum: 2}
@@ -13,10 +14,11 @@ class Book < ActiveRecord::Base
 	# validates :title, length: {minimum: 2}, allow_blank: true
 	# validates :title, exclusion: {in: %w(www ca us jp), message: "%{value} is reserved"}
 	# validates :title, length: {minimum: 2}, allow_nil: true
-	
+		
 	#...............<CALLBACKS>.................
 	after_validation :check_title?
 	before_validation :description_has_value?, on: :create 
+	belongs_to :author
 	#after_create_commit :log_user_saved_to_db
 	# before_save :another_name_field_has_value?
 	private

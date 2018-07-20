@@ -1,4 +1,19 @@
 Library::Application.routes.draw do
+  get "books/index"
+
+  get "books/new"
+
+  get "welcome/index"
+  
+  get 'products/:id' => 'books#edit', :as => :edit_books
+  
+  
+  root to:'welcome#index'
+
+  resources :authors do
+    resources :books
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

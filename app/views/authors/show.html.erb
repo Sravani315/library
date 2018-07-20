@@ -1,0 +1,9 @@
+<h2>Author details</h2>
+<p>
+  <strong>Name:</strong>
+  <%= @author.name %>
+</p>
+<p>
+	<%= link_to "Back", authors_path %>&nbsp
+	<%= link_to "destroy", author_path, method: :delete, data: { confirm: 'Are you sure?' }%>
+</p>

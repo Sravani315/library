@@ -1,0 +1,14 @@
+<%=form_for @book, url: {action: (params[:action]=='new') ? 'create' : 'update' } do |form|%>
+	<%= render 'books/errors' %>
+	<p>
+		<strong><%= form.label :title%></strong><br>
+		<%= form.text_field :title%><br>
+	</p>
+	<p>
+		<strong><%= form.label :description%></strong><br>
+		<%= form.text_field :description%><br>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<%end%>
