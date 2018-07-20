@@ -34,15 +34,21 @@ class AuthorsController < ApplicationController
 	end
 
 	def destroy
-	  @article = Article.find(params[:id])
-	  @article.destroy
+		@author = Author.find(params[:id])
+		@author.destroy
+
+		redirect_to authors_path
+	end
+
+	def destroy
+	  @author = Author.find(params[:id])
+	  @author.destroy
 	 
 	  redirect_to authors_path
 	end
 
 	private
 		def author_params 
-			# binding.pry
 			params.require(:author).permit(:name)
 		end
 end

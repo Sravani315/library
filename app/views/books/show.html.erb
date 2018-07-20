@@ -1,0 +1,15 @@
+<h2>Book details</h2>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+<p>
+	<%= link_to "Back", author_books_path %>&nbsp
+	<%= link_to 'Destroy', author_book_path,
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+</p>

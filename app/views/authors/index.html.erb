@@ -23,10 +23,19 @@
 					0
 				</td>
 				<td>
-					<%= link_to "edit", edit_author_path(author) %>
+					<%= link_to "edit", edit_author_path(author) %>&nbsp
 				</td>
 				<td>
-					<%= link_to "show", author_path(author) %>
+					<%= link_to "show", author_path(author) %>&nbsp
+				</td>
+				<td>
+					<%= link_to "add book", new_author_book_path(author) %>&nbsp
+				</td>
+				<td>
+					<%= link_to "books_list", author_books_path(author) %>&nbsp
+				</td>
+				<td>
+					<%= link_to "destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' }%>&nbsp
 				</td>
 			</tr>
 		<%end%>

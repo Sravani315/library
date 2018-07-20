@@ -3,4 +3,7 @@
   <strong>Name:</strong>
   <%= @author.name %>
 </p>
-<%= link_to "Back", authors_path %>
+<p>
+	<%= link_to "Back", authors_path %>&nbsp
+	<%= link_to "destroy", author_path, method: :delete, data: { confirm: 'Are you sure?' }%>
+</p>
