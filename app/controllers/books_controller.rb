@@ -18,9 +18,8 @@ class BooksController < ApplicationController
   end
 
   def update
-  	# @author = Author.find(params[:author_id])
   	@book = Book.find(params[:id])
-  	if @book.update_attributes(book_params)
+  	if @book.update(book_params)
   		redirect_to author_books_path
   	else
   		render 'edit'
@@ -29,7 +28,6 @@ class BooksController < ApplicationController
 
   def edit
   	@book = Book.find(params[:id])
-  	# params.merge!(author_id: @book.author_id)
   end
 
   def show

@@ -8,7 +8,7 @@ Library::Application.routes.draw do
   get 'products/:id' => 'books#edit', :as => :edit_books
   
   
-  root to:'welcome#index'
+  root 'welcome#index'
 
   resources :authors do
     resources :books
