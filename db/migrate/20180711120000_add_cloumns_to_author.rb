@@ -1,4 +1,4 @@
-class AddCloumnsToAuthor < ActiveRecord::Migration
+class AddCloumnsToAuthor < ActiveRecord::Migration[5.1]
   def change
     add_column :authors, :name, :string
 
