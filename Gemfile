@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '5.1.0'
 # gem 'strong_parameters'
-#gem 'ruby', '2.4.4'
+gem 'ruby', '2.4.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,6 +10,7 @@ gem 'rails', '5.1.0'
 # gem 'sqlite3'	
 gem 'pry'
 gem 'mysql2', '0.3.18'
+gem "iconv", "~> 1.0.3"
 
 # Gems used only for assets and not required
 # in production environments by default.
