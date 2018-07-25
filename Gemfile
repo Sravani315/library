@@ -10,7 +10,7 @@ gem 'rails', '5.1.0'
 
 # gem 'sqlite3'	
 gem 'pry'
-group :development,:test do
+group :development do
 	gem 'mysql2', '0.3.18'
 end
 gem "iconv", "~> 1.0.3"
