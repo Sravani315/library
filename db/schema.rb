@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -9,40 +8,24 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180719090236) do
+ActiveRecord::Schema.define(version: 20180719090236) do
 
-  create_table "accounts", :force => true do |t|
-    t.string   "acount_num"
-    t.integer  "supplier_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
-  add_index "accounts", ["supplier_id"], :name => "index_accounts_on_supplier_id"
-
-  create_table "authors", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name"
-  end
-
-  create_table "books", :force => true do |t|
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "ano_name"
-    t.text     "description"
-    t.string   "title"
-    t.integer  "author_id"
-  end
-
-  add_index "books", ["author_id"], :name => "index_books_on_author_id"
-
-  create_table "suppliers", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ano_name"
+    t.text "description"
+    t.string "title"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
 
 end
