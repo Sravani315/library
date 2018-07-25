@@ -14,6 +14,7 @@ group :development do
 	gem 'mysql2', '0.3.18'
 end
 gem "iconv", "~> 1.0.3"
+gem 'puma'
 # gem 'compass-rails'
 
 # Gems used only for assets and not required
