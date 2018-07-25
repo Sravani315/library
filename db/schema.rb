@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20180719090236) do
     t.string "ano_name"
     t.text "description"
     t.string "title"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  add_foreign_key "books", "authors"
 end
