@@ -1,16 +1,20 @@
 source 'https://rubygems.org'
 
+ruby '2.4.4'
+
 gem 'rails', '5.1.0'
 # gem 'strong_parameters'
-gem 'ruby', '2.4.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'	
 gem 'pry'
-gem 'mysql2', '0.3.18'
+group :development,:test do
+	gem 'mysql2', '0.3.18'
+end
 gem "iconv", "~> 1.0.3"
+# gem 'compass-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,7 +29,7 @@ group :assets do
 end
 
 group :production do
-	gem 'pg'
+ 	gem 'pg'
 end
 
 gem 'jquery-rails'
