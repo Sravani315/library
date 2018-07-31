@@ -1,6 +1,4 @@
-      
-      <%binding.pry%>
-<%@book = Book.find(params[:id])%>
+      <%@book = Book.find(params[:id])%>
       <%if @book.present? %>
       <div class="modal-header">
         <h5 class="modal-title" id="modal-windowTitle">Book Details</h5>
@@ -10,8 +8,12 @@
       </div>
       <div class="modal-body">
           <p>
-            <strong>Book Name:</strong>
+            <b>Title:</b>
             <%= @book.title %>
+          </p>
+          <p>
+            <b>Description:</b>
+            <%= @book.description %>
           </p>
       </div>
       <div class="modal-footer">

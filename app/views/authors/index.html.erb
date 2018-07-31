@@ -21,7 +21,7 @@
 						</td>
 						<td>
 							<%= link_to "Edit", edit_author_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
-							<%= link_to "Show", author_path(author), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-sm'} 	%>&nbsp
+							<%= link_to "Show", author_path(author), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-sm'} %>&nbsp
 							<%= link_to "Add Book", new_author_book_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
 							<%= link_to "Books List", author_books_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
 							<%= link_to "Destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-primary btn-sm", role: "button"	%>&nbsp
