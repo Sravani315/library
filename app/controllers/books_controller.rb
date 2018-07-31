@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def create
   	@book = author.books.new(book_params)
   	if @book.save
-  		redirect_to action:'show', id: @book.id
+  		redirect_to author_books_path
   	else
   		render 'new'
   	end		
