@@ -2,7 +2,8 @@ class Book < ActiveRecord::Base
 	# validates :title, presence: true, if: :title_is?
 
 	validates :title, length: {minimum: 2}
-	validates :description, length: { within: 2...20 }
+	validates :description, length:{maximum: 100}
+	# validates :description, length: { within: 2...20 }
 	# validates :title, length: {minimum: 2}
 	# validates :title, length: { maximum: 2 }
 	 # validates :title, length: { in: 2..5 }
