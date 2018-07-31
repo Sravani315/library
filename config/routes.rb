@@ -1,14 +1,16 @@
 Library::Application.routes.draw do
-  get "books/index"
+  # get "books/index"
 
-  get "books/new"
+  # get "books/new"
 
-  get "welcome/index"
+  # get "books/"
+
+   get "welcome" => 'welcome#index'
   
-  get 'products/:id' => 'books#edit', :as => :edit_books
+  # get 'books/:id' => 'books#show', :as => :show_book
   
-  
-  root 'welcome#index'
+  get 'books/books_list' => 'books#books_list', :as => :books_list
+  #root 'welcome#index'
 
   resources :authors do
     resources :books

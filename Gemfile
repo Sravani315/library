@@ -15,6 +15,7 @@ group :development do
 end
 gem "iconv", "~> 1.0.3"
 gem 'puma'
+gem 'bootstrap', '~> 4.1.3'
 # gem 'compass-rails'
 
 # Gems used only for assets and not required

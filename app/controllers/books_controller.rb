@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  def books_list
+    @books = Book.all
+  end
 
   def index
   	@books = author.books.all
@@ -32,6 +35,9 @@ class BooksController < ApplicationController
 
   def show
   	@book = Book.find(params[:id])
+    respond_to do | format |
+      format.js
+    end
   end
 
   def destroy

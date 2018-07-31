@@ -1,14 +1,20 @@
-<%=form_for @book, url: {action: (params[:action]=='new') ? 'create' : 'update' } do |form|%>
+<%=form_for @book, url: {action: (params[:action]=='new' || params[:action]=='create') ? 'create' : 'update' }, class: 'form-horizantal' do |form|%>
 	<%= render 'books/errors' %>
-	<p>
-		<strong><%= form.label :title%></strong><br>
-		<%= form.text_field :title%><br>
-	</p>
-	<p>
-		<strong><%= form.label :description%></strong><br>
-		<%= form.text_field :description%><br>
-	</p>
-	<p>
-		<%= form.submit %>
-	</p>
+	<div class="form-group">
+		<div class="col-md-2">
+			<strong><%= form.label :title%></strong>
+			<%= form.text_field :title, class: 'form-control'%>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2">
+			<strong><%= form.label :description%></strong>
+			<%= form.text_field :description, class: 'form-control'%>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2">
+			<%= form.submit 'Submit', class: 'btn btn-primary btn-sm', role: "button"%>
+		</div>
+	</div>
 <%end%>

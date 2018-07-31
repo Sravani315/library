@@ -1,46 +1,49 @@
-<table>
-	<tr>
-		<td>
-			<h2>Authors list</h2>
-		</td>
-		<td>
-			<%= link_to 'Add new author', new_author_path %>
-		</td> 
-	</tr> 
-	
-	<tr>
-		<th>Author Name</th>
-		<th>Number of books</th>
-		<th colspan="3"></th>
-	</tr>
-	<%if @authors.present?%>
-		<%@authors.each do |author|%>
-			<tr>
-				<td>
-					<%= author.name%>
-				</td>
-				<td>
-					0
-				</td>
-				<td>
-					<%= link_to "edit", edit_author_path(author) %>&nbsp
-				</td>
-				<td>
-					<%= link_to "show", author_path(author) %>&nbsp
-				</td>
-				<td>
-					<%= link_to "add book", new_author_book_path(author) %>&nbsp
-				</td>
-				<td>
-					<%= link_to "books_list", author_books_path(author) %>&nbsp
-				</td>
-				<td>
-					<%= link_to "destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' }%>&nbsp
-				</td>
-			</tr>
-		<%end%>
-	<%else%>
-		<tr><td> There is no authors to display. </p>	</td></tr>
-	<%end%>
+<div class="container">
+    <div class="row col-md-20">
+    	<h3 style="margin-top: 30px; margin-bottom: 20px">List of Authors</h3>
+		<table class="table table-hover table-bordered table-striped ">
+			<%if @authors.present?%>
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Author Name</th>	
+					<th scope="col">Number of books</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%@authors.each do |author|%>
+					<tr>
+						<td>
+							<%= author.name%>
+						</td>
+						<td>
+							<%=author.books.size%>
+						</td>
+						<td>
+							<%= link_to "Edit", edit_author_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
+							<%= link_to "Show", author_path(author), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-sm'} 	%>&nbsp
+							<%= link_to "Add Book", new_author_book_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
+							<%= link_to "Books List", author_books_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
+							<%= link_to "Destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-primary btn-sm", role: "button"	%>&nbsp
+						</td>
+					</tr>
+				<%end%>
+			<%else%>
+				<tr><td> There is no authors to display.</td></tr>
+			<%end%>
+			</tbody>
 
-</table>
+		</table>
+		<%= link_to 'New Author', new_author_path, class: "btn btn-primary btn-sm", role: "button" %>
+	</div>
+</div>
+
+
+</div>
+<div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="modal-windowTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+      
+      <%binding.pry%>
+<%@book = Book.find(params[:id])%>
+      <%if @book.present? %>
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-windowTitle">Book Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p>
+            <strong>Book Name:</strong>
+            <%= @book.title %>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      <% end %>
