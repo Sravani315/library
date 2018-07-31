@@ -7,9 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%=render 'layouts/nav_bar'%>
-	<div class="container">
+	<header>	
+		<%=render 'layouts/nav_bar'%>
+	</header>
+
+	<main class="container">
 		<%= yield %>
-	</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<span class="text-muted">@Devathon</span>
+		</div>
+	</footer>
 </body>
-</html>
+</html>	
