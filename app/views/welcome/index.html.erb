@@ -1,3 +1,34 @@
 
 <center><h2 style="margin-top: 30px">Welcome to Library</h2>
 <%= link_to 'Add Author', new_author_path, class: "btn btn-primary btn-sm", role: "button", style:'margin-top:20px'%></center>
+<button id="products">Products</button>
+<table class="table table-hover table-bordered table-striped " >
+    <thead class="thead-dark">  
+      <tr>
+        <th scope="col" >Product Name</th> 
+        <th scope="col" >Product Type</th>
+      </tr>
+    </thead>
+    <tbody id="tableContent">
+    </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#products").on("click", function(event){
+          $.ajax({
+              url:"https://api.zaggle.in/api/v1/products/search",
+              method: "GET",
+              dataType: "json",
+              success: function (json) {
+                $("#tableContent").empty();
+                for (var i=0;i<json["products"].length;i++){
+                    $("#tableContent").append("<tr><td>"+json["products"][i]["name"]+"</td>"+"<td>"+json["products"][i]["product_type"]+"</td></tr>");
+                } 
+              },
+              error: function(){
+                console.log("fail");
+              }
+          });     
+      });
+  });
+</script>
