@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  
   def books_list
     @books = Book.all
   end

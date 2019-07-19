@@ -1,28 +1,61 @@
-
 <center><h2 style="margin-top: 30px">Welcome to Library</h2>
 <%= link_to 'Add Author', new_author_path, class: "btn btn-primary btn-sm", role: "button", style:'margin-top:20px'%></center>
-<button id="products">Products</button>
-<table class="table table-hover table-bordered table-striped " >
-    <thead class="thead-dark">  
-      <tr>
-        <th scope="col" >Product Name</th> 
-        <th scope="col" >Product Type</th>
-      </tr>
-    </thead>
-    <tbody id="tableContent">
-    </tbody>
-</table>
-<script type="text/javascript">
+<!-- <button id="products">Ajax Ex</button>
+<div class="container-fluid" >
+  <div class="row giftCards-container-large" id="products_content">
+  </div>
+</div> -->
+<!-- <script id="template" type="text/x-jquery-tmpl" >
+      <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 giftCards-card-block">
+        <div class="giftCards-img-merchandise-large">
+          <div class="giftCards-div-container">
+            <img class="img-responsive giftCards-img-card-large center-block" src="${url}">
+          </div>
+        </div>
+        <h4 class="giftCards-productname giftcard-h4-xs" style="position: relative;top: 1px;margin-left: 5px">
+          <a class="truncate-text-line-2" href="#">${name}</a>
+        </h4>
+        <div class="row" style="position: relative;top: -30px">
+          <div uib-dropdown="" class="col-sm-4 col-md-3 col-lg-3 hidden-xs dropdown"  aria-hidden="false">
+            <button class="btn btn-default buy-gift-amount dropdown-toggle"  style="height: 33px" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-inr"></i>Rs. 5000 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" selected="selected">
+              <li role="menuitem" ><a><i class="fa fa-inr"></i>Rs. 5000</a></li>
+              <li role="menuitem" ><a><i class="fa fa-inr"></i>Rs. 500</a></li>
+              <li role="menuitem" ><a><i class="fa fa-inr"></i>Rs. 1000</a></li>
+              <li role="menuitem" ><a><i class="fa fa-inr"></i>Rs. 2000</a></li>
+              <li role="menuitem" ><a><i class="fa fa-inr"></i>Rs. 1</a></li>
+            </ul>
+          </div>  
+          <div class="col-sm-3 col-md-4 col-lg-4 hidden-xs btn-buyredeem-container-sm">
+            <button class="btn giftCards-btn-buynow-large" style="position: relative;font-size: 11px;height: 33px;margin-left: 15px">BUY NOW</button>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 hidden-xs">
+            <button class="btn giftCards-btn-enquiry-large pull-right" style="font-size: 11px;height: 33px !important" >BULK ENQUIRY</button>
+          </div>
+        </div>
+      </div>
+</script> -->
+
+<!-- <script type="text/javascript" >
   $(document).ready(function(){
       $("#products").on("click", function(event){
           $.ajax({
               url:"https://api.zaggle.in/api/v1/products/search",
               method: "GET",
               dataType: "json",
-              success: function (json) {
-                $("#tableContent").empty();
-                for (var i=0;i<json["products"].length;i++){
-                    $("#tableContent").append("<tr><td>"+json["products"][i]["name"]+"</td>"+"<td>"+json["products"][i]["product_type"]+"</td></tr>");
+              success: function (result) {
+                // console.log();
+                $("#products_content").empty();
+                for ( var i=0 ; i<result.products.length ; i++ ){
+                    var product_data = {
+                        name: result.products[i].name,
+                        url: result.products[i].image.image.url
+                    };
+                    console.log(product_data);
+                    var tbody=$("#template").tmpl(product_data);
+                    $('#products_content').append(tbody);
                 } 
               },
               error: function(){
@@ -31,4 +64,4 @@
           });     
       });
   });
-</script>
+</script> -->

@@ -1,4 +1,22 @@
 <div class="container">
+    <!-- <div id="error_explanation" class="alert alert-primary" role="alert" style="width: 40rem">
+      <h5>
+        Errors
+      </h5>
+      <ul>
+        <%# @author.errors.full_messages.each do |msg| %>
+          <li><%#= msg %></li>
+        <%# end %>
+      </ul>
+    </div> -->
+    <%if flash[:notice].present? %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> <%= flash[:notice] %></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%end%>
     <div class="row col-md-20">
     	<h3 style="margin-top: 30px; margin-bottom: 20px">List of Authors</h3>
 		<table class="table table-hover table-bordered table-striped ">
@@ -20,11 +38,11 @@
 							<%=author.books.size%>
 						</td>
 						<td>
-							<%= link_to "Edit", edit_author_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
+							<%= link_to "Edit", edit_author_path(author),class: "btn btn-primary btn-sm", role: "button", remote: true%>&nbsp
 							<%= link_to "Show", author_path(author), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-sm'} %>&nbsp
 							<%= link_to "Add Book", new_author_book_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
 							<%= link_to "Books List", author_books_path(author),class: "btn btn-primary btn-sm", role: "button" %>&nbsp
-							<%= link_to "Destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-primary btn-sm", role: "button"	%>&nbsp
+							<%= link_to "Destroy", author_path(author), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm", role: "button"	%>&nbsp
 						</td>
 					</tr>
 				<%end%>
@@ -34,7 +52,7 @@
 			</tbody>
 
 		</table>
-		<%= link_to 'New Author', new_author_path, class: "btn btn-primary btn-sm", role: "button" %>
+		<%= link_to 'New Author', new_author_path, class: "btn btn-primary btn-sm", role: "button", remote: true %>
 	</div>
 </div>
 
@@ -42,6 +60,14 @@
 </div>
 <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="modal-windowTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="AuthorModal" tabindex="-1" role="dialog" aria-labelledby="AuthorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       
     </div>

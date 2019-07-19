@@ -1,37 +1,36 @@
 source 'https://rubygems.org'
 
-ruby '2.4.4'
+# ruby '2.4.4'
 
-gem 'rails', '5.1.0'
-# gem 'strong_parameters'
+gem 'rails', '~> 5.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'	
-gem 'pry'
-group :development do
-	gem 'mysql2', '0.3.18'
+
+group :development, :test do
+	gem 'mysql2', '~> 0.5.2'
+  gem 'pry'
 end
+group :development do
+  gem 'spring'
+  gem 'bootsnap', require: false
+  gem 'listen'
+end
+
 gem "iconv", "~> 1.0.3"
 gem 'puma'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~>4.3.1'
 # gem 'compass-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
 
 group :production do
  	gem 'pg', '~> 0.18'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'

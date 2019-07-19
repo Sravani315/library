@@ -9,3 +9,259 @@
    background-color: #f5f5f;
    border-top: 1px solid #dee2e6;
 }
+
+.giftCards-card-block {
+    width: 29%;
+    height: 264px;
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 30px;
+    margin: 24px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.giftCards-container-large {
+    margin-top: 2%;
+    border: solid 1px;
+}
+.row {
+    margin: 0;
+}
+.giftCards-img-merchandise-large {
+    position: relative;
+    width: 100%;
+    height: 175px;
+}
+
+.giftCards-div-container {
+    height: 175px;
+    margin-bottom: 5%;
+}
+.giftCards-img-card-large {
+    max-height: 190px;
+    padding: 0;
+    width: 354px !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.center-block {
+    display: block;
+   margin-left: 15px; 
+}
+.img-responsive,
+{
+    max-width: 100%;
+    height: auto;
+}
+.giftCards-productname a {
+    height: 40px;
+    color: #000;
+}
+
+.truncate-text-line-2, .truncate-text-line-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.giftCards-card-block h4, .giftCards-card-block p {
+    padding: 10px;
+}
+.col-lg-3 {
+    width: 25%;
+}
+.dropdown {
+    position: relative;
+}
+
+.buy-gift-amount {
+    border-radius: 0;
+    width: 75px;
+    border: 1px solid #69c7c7;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.col-lg-4 {
+    /*width: 33.33333333%;*/
+    float: left;    
+}
+
+  .col-lg-3 {
+      float: left;
+  } 
+  .col-lg-3,.col-md-3,.col-sm-4
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.giftCards-btn-buynow-large {
+    border-radius: 0;
+    background-color: #69c7c7;
+    color: #fff;
+}
+
+.giftCards-btn-enquiry-large {
+    border-radius: 0;
+    background-color: #fff;
+    color: #69c7c7;
+    border: 1px solid #69c7c7;
+}
+.pull-right {
+    float: right;
+}
+
+.col-lg-4,.col-md-4,.col-sm-3,.col-lg-5,.col-md-5,.col-sm-5
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-lg-5 {
+    width: 41.66666667%;
+    float: left;  
+}
+
+.giftCards-dropdown-menu-amount li {
+    margin-left: 4%;
+    padding-top: 5%;
+    cursor: hand;
+    cursor: pointer;
+}
+.dropdown-menu {
+    display: block;
+}
+
+element {
+    min-width: 96px;
+    left: 6px;
+}
+
+.open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.img-responsive{    
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+}
+h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 18px;  
+}
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.buy-gift-amount {
+    border-radius: 0;
+    width: 75px;
+    border: 1px solid #69c7c7;
+    }
+.open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
+.dropdown-toggle:focus {
+    outline: 0;
+}
+.btn-default:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+.btn:focus{
+    text-decoration: none;
+}
+.btn:focus{
+    outline-offset: -2px;
+}
+button{
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+body {
+    font-family: montserratmedium,Arial,Sans-Serif;
+    font-size: 14px;
+    color: #444;
+}
